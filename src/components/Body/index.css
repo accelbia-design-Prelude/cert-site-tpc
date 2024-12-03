@@ -1,0 +1,102 @@
+/* Poppins all weights */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+iframe {
+    border: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+
+  font-family: 'Poppins', sans-serif;
+  color: #394C64;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+}
+
+/* If screen is mobile, change direction to column */
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+#certificate-id{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#search-btn{
+    width: 50%;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #394C64;
+    color: #394C64;
+    transition: 0.3s;
+    height: 50px;
+}
+
+#search-btn:hover{
+    background-color: #F3B643;
+    cursor: pointer;
+    border: 1px solid #F3B643;
+}
+
+#download-btn{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #394C64;
+    color: #394C64;
+    transition: 0.3s;
+}
+
+#download-btn:hover{
+    background-color: #F3B643;
+    cursor: pointer;
+    border: 1px solid #F3B643;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:baseline;
+    align-items: center;
+    gap: 10px;
+}
+
+h4{
+    font-weight: 600;
+}
+
+.error{
+    color: rgb(249, 70, 112);
+}
+
+.info{
+    color: #394C64;
+}
+
+.success{
+    color: #075830;
+}

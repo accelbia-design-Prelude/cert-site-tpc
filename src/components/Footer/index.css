@@ -1,0 +1,22 @@
+.footer-column{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    margin: 0 20px;
+    width: 60%;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+    background-color: #d5bc8d  ;
+    color: #394C64;
+}
+
+.footer-column li{
+    list-style-type: none;
+    margin: 0 20px;
+}
