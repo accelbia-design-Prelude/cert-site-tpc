@@ -10,6 +10,31 @@ const Body: React.FC = () => {
   const [pdf_b64, setPdf_b64] = React.useState<string>("");
   const [pdfLink, setPdfLink] = React.useState<string>("");
 
+  const [placeholder, setPlaceholder] = React.useState<string>("");
+
+
+  // typing effect for placeholder
+  const placeholderText = "Certificate ID";
+  const placeholderSpeed = 100;
+  const placeholderDelay = 2000;
+
+  React.useEffect(() => {
+    let i = 0;
+    const placeholderInterval = setInterval(() => {
+      if (i <= placeholderText.length) {
+        setPlaceholder(placeholderText.slice(0, i));
+        i++;
+      } else {
+        clearInterval(placeholderInterval);
+      }
+    }, placeholderSpeed);
+
+    setTimeout(() => {
+      clearInterval(placeholderInterval);
+    }, placeholderDelay);
+  }, []);
+
+
   const VerifyInput = () => {
     if (idValue === "") {
       setErrormsg("Please enter a valid Certificate ID");
@@ -70,12 +95,11 @@ const Body: React.FC = () => {
 
   ) : (
     <img
-      src="https://placehold.co/600x400?text=Enter+Your+Certificate_ID"
+      src="https://placehold.co/600x400?text=Enter+Your+Certificate+ID"
       alt="placeholder"
     />
   );
-
-
+  
   return (
     <div>
       <div className="container">
@@ -85,7 +109,7 @@ const Body: React.FC = () => {
             <div className="input-field">
               <input
                 type="text"
-                placeholder="Enter Certificate ID"
+                placeholder={placeholder}
                 value={idValue}
                 onChange={(e) => setIdValue(e.target.value)}
                 id="certificate-id"
