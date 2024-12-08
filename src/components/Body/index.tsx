@@ -91,7 +91,7 @@ const Body: React.FC = () => {
 
   const pdfElement = pdf_b64 ? (
     // <Base64PDFViewer base64String={pdf_b64} />
-    <iframe src={pdfLink} width="600px" height="400px" title="PDF Viewer" style={{ border: "none" }} />
+    <iframe src={pdfLink + '#toolbar=0'} width="600px" height="400px" title="PDF Viewer" style={{ border: "none" }} />
 
   ) : (
     <img
