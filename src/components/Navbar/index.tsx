@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
         <a className="logo" href="https://www.thepedagogycommunity.org/">
-            <img src='/cert-site-tpc/headerimage.png' alt="Logo" />
+            <img src='/SVG/Horz-C.svg' alt="Logo" height={50} />
         </a>
         <div className="nav-buttons">
             <button onClick={() => redirectToPage('home')}>Home</button>

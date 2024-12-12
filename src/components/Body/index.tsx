@@ -95,7 +95,8 @@ const Body: React.FC = () => {
 
   ) : (
     <img
-      src="https://placehold.co/600x400?text=Enter+Your+Certificate+ID"
+      // src="https://placehold.co/600x400/white/?text=Enter+Your+Certificate+ID"
+      src="https://placehold.co/600x400/FFF/CCC/?text=Enter+Your+Certificate+ID"
       alt="placeholder"
     />
   );
