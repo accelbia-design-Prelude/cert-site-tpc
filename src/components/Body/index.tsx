@@ -10,7 +10,27 @@ const Body: React.FC = () => {
   const [pdf_b64, setPdf_b64] = React.useState<string>("");
   const [pdfLink, setPdfLink] = React.useState<string>("");
 
+  const [pdfWidth, setPdfWidth] = React.useState<number>(600);
+  const [pdfHeight, setPdfHeight] = React.useState<number>(400);
+
   const [placeholder, setPlaceholder] = React.useState<string>("");
+
+
+  // handle screen width change
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setPdfWidth(420);
+        setPdfHeight(300);
+      } else {
+        setPdfWidth(600);
+        setPdfHeight(400);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
   // typing effect for placeholder
@@ -91,12 +111,13 @@ const Body: React.FC = () => {
 
   const pdfElement = pdf_b64 ? (
     // <Base64PDFViewer base64String={pdf_b64} />
-    <iframe src={pdfLink + '#toolbar=0'} width="600px" height="400px" title="PDF Viewer" style={{ border: "none" }} />
+    <iframe src={pdfLink + '#toolbar=0'} width={pdfWidth} height={pdfHeight} title="certificate" style={{ border: "none" }} />
 
   ) : (
     <img
       // src="https://placehold.co/600x400/white/?text=Enter+Your+Certificate+ID"
-      src="https://placehold.co/600x400/FFF/CCC/?text=Enter+Your+Certificate+ID"
+      // src="https://placehold.co/600x400/FFF/CCC/?text=Enter+Your+Certificate+ID"
+      src={`https://placehold.co/${pdfWidth}x${pdfHeight}/FFF/CCC/?text=Enter+Your+Certificate+ID`}
       alt="placeholder"
     />
   );

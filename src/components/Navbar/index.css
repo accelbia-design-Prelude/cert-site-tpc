@@ -14,6 +14,12 @@ body{
     display: flex;
     justify-content: space-between;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .nav-buttons{
@@ -21,6 +27,7 @@ body{
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    margin-right: 20px;
 }
 
 .nav-buttons button{
@@ -57,4 +64,28 @@ body{
 
 .nav-buttons .dark{
     display: none;
+}
+
+.logo img{
+    width: 200px;
+}
+
+@media screen and (max-width: 768px){
+    .nav-buttons{
+        display: none;
+    }
+
+    .nav-buttons .dark{
+        display: block;
+    }
+
+    .nav-buttons .light{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar{
+        padding: 10px 20px;
+    }
 }
